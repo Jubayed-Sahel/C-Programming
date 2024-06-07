@@ -1,0 +1,11 @@
+
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("please enter ASCII value :  ");
+    scanf("%d",&n);
+    printf("The Character is : %c\n",n);
+
+    return 0;
+}

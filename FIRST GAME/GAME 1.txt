@@ -1,0 +1,174 @@
+#include<stdio.h>
+int main()
+{
+    int main_array [6][6];
+    int i,p,j,k,t_move,sol;
+    char robot = 1;
+    int zero = 0;
+    int m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12;
+    printf("\t\t\t****  KEEP YOUR KING ALIVE UNTIL HE REACHES IN HIS HOME  ****");
+    printf("\n\nINSTRUCTIONS:\n\tNO. 1: USE 8,2,4,6 TO MOVE UP,DOWN,LEFT,RIGHT\n\tNO. 2:IF YOU FINISH IN 10 STEPS,PRESS 0 FOR EXTRA STEPS(which is going to be count as null value)");
+
+    printf("\n");
+    printf("\n\nSTARTING POINT (^) AND KINGS HOME ($):\n");
+
+    for(i=0;i<6;i++)
+    {
+        for(j=0;j<=i;j++)
+        {
+                if(j==0 && i==0)
+                {
+                    printf("^ ");
+                }
+                else
+                {
+                    printf("* ");
+                }
+        }
+        for(j=i;j<6;j++)
+        {
+            if(j==5 && i==5)
+            {
+                printf("$ ");
+            }
+            else
+            {
+                printf("* ");
+            }
+        }
+        printf("\n");
+    }
+
+
+
+    //creating the main field(start)
+    for(i=0; i<6; i++)
+    {
+        for(j=0; j<6; j++)
+        {
+            main_array[i][j] = 0 ;
+        }
+    }
+    main_array[1][1] = 5;
+    main_array[1][3] = 5;
+    main_array[1][5] = 5;
+    main_array[3][2] = 5;
+    main_array[3][4] = 5;
+    main_array[4][0] = 5;
+    main_array[4][2] = 5;
+    main_array[5][1] = 5;
+    main_array[5][3] = 5;
+    main_array[5][4] = 5;
+
+        printf("\n\n\n");
+    printf("HERE '5' IS INDICATING THE BOMBS\n\n");
+    printf("!@!MAKE YOUR WAY TO THE END CAREFULLY BOSS!@!\n");
+    for(i=0;i<6;i++)
+    {
+        for(i=0;i<6;i++)
+        {
+            for(j=0;j<6;j++)
+            {
+                printf("         %d",main_array [i][j]);
+            }
+            printf("\n");
+        }
+    }
+
+
+    //end of creating field
+
+
+
+
+
+
+    //movement process
+    printf("\n\n\nENTER MOVEMENT:");
+
+    printf("\n1 no move = ",i);
+    scanf("%d",&m1);
+
+    printf("\n2 no move = ",i);
+    scanf("%d",&m2);
+
+    printf("\n3 no move = ",i);
+    scanf("%d",&m3);
+
+    printf("\n4 no move = ",i);
+    scanf("%d",&m4);
+
+    printf("\n5 no move = ",i);
+    scanf("%d",&m5);
+
+
+    printf("\n6 no move = ",i);
+    scanf("%d",&m6);
+
+
+    printf("\n7 no move = ",i);
+    scanf("%d",&m7);
+
+
+    printf("\n8 no move = ",i);
+    scanf("%d",&m8);
+
+
+
+    printf("\n9 no move = ",i);
+    scanf("%d",&m9);
+
+
+    printf("\n10 no move = ",i);
+    scanf("%d",&m10);
+
+
+    printf("\n11 no move = ",i);
+    scanf("%d",&m11);
+
+
+    printf("\n12 no move = ",i);
+    scanf("%d",&m12);
+
+    if(m1==6 && m2==6 && m3==6 && m4==6 && m5==2 && m6==2 && m7==4 && m8==2 && m9==2 && m10==6 && m11==6 && m12==2)
+    {
+        printf("!!! YOU WIN !!!");
+    }
+    else if(m1==6 && m2==6 && m3==2 && m4==2 && m5==6 && m6==2 && m7==2 && m8==6 && m9==6 && m10==2 && m11==0 && m12==0)
+    {
+        printf("!!! YOU WIN !!!");
+    }
+    else if(m1==6 && m2==6 && m3==6 && m4==6 && m5==2 && m6==2 && m7==6 && m8==2 && m9==2 && m10==2 && m11==0 && m12==0)
+    {
+        printf("!!! YOU WIN !!!\n\n\n");
+    }
+    else
+    {
+
+
+        printf("\n\n\n\t\t\t\t!!! YOU HAVE FAILED !!!\n\n\n");
+
+        printf("\n\nFOR SOLTUION PRESS ( 1 )\n");
+    scanf("%d",&sol);
+    if(sol==1)
+    {
+        printf("\nSOLUTION 1 : 6-6-6-6-2-2-4-2-2-6-6-2\nSOLTION 2 : 6-6-2-2-6-2-2-6-6-2-0-0\nSOLTION 3 : 6-6-6-6-2-2-6-2-2-2-0-0\n\n");
+    }
+    else
+    {
+        printf("RESTART AND TRY AGAIN\n");
+    }
+
+
+
+    }
+
+
+
+
+
+
+    return 0;
+}
+
+

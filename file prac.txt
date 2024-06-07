@@ -1,0 +1,44 @@
+1................
+#include<stdio.h>
+#include<string.h>
+struct BirthCertificate
+{
+    int day, month, year;
+    char name[100], fatherName[100], motherName[100];
+};
+int main()
+{
+    struct BirthCertificate b[3];
+    for(int i=0;i<3;i++)
+    {
+        printf("\nYOUR NAME \n:");
+        scanf("%s",b[i].name);
+        printf("\nFATHERS NAME \n:");
+        scanf("%s",b[i].fatherName);
+        printf("\nMOTHERS NAME \n:");
+        scanf("%s",&b[i].motherName);
+        printf("\nBIRTH DAY\n:");
+        scanf("%d",&b[i].day);
+        printf("\nBIRTH MONTH\n:");
+        scanf("%d",&b[i].month);
+        printf("\nBIRTH YEAR\n:");
+        scanf("%d",&b[i].year);
+        printf("\n\n");
+    }
+    printf("OUTPUT IS PRINTED ON FILE\n");
+
+    FILE *myfile;
+    myfile = fopen("structprac.txt","wt+");
+    for(int i=0;i<3;i++)
+    {
+        fprintf(myfile,"NAME : %s\n",b[i].name);
+        fprintf(myfile,"FATHERS NAME : %s\n",b[i].fatherName);
+        fprintf(myfile,"MOTHERS NAME : %s\n",b[i].motherName);
+        fprintf(myfile,"DATE OF BIRTH : %d/%d/%d\n",b[i].day,b[i].month,b[i].year);
+        fprintf(myfile,"\n\n");
+    }
+    fclose(myfile);
+
+
+    return 0;
+}

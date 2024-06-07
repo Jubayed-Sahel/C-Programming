@@ -1,0 +1,335 @@
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+#include<stdlib.h>
+
+struct work
+{
+    char name[10];
+    int available;
+    float price;
+};
+float incomecalcu(float income,float fpri,int num)
+{
+    income = income + (fpri * num);
+    return income;
+}
+int main()
+{
+
+    printf("\t\t\t\t|>(==):>  FISH MARKET CALCULATION(OWNER VIEW)  <:(==)<|\n\n\n");
+    printf("\t\t***INfO:basically its a site where a fish market owner can do his/her calculation***\n\n\tTHE THINGS HE/SHE CAN DO IS : \n\t1.add fish \n\t2.sell fish\n\t3.calculate profit\n\t4.CAN SEE how many fishes are available at the end of the day\n\t5.what are the conditions of fishes\n\n\n\n\n");
+    int n;
+    printf("\t\t\t\t\t0-:------------  HINT  ---------- :-0\n\t\t\t1.FIRST ENTER WHAT YOU ALREADY HAVE IN STOCK\n\t\t\t2.THEN THE PROGRAM WILL SHOW YOU THE OPTIONS GIVEN ON INFO\n\n\n");
+    printf("\n\n\t\t\t\t\t:-0======START======0-:\n\n");
+    printf("\nHOW MANY VARIETIES OF FISH ARE AVAILABLE IN THE MARKET \n: ");
+    scanf("%d",&n);
+    printf("\n\n");
+    float income = 0.0;
+
+    //structure
+    //taking inputs
+    struct work fish[n];
+    for(int i=0; i<n; i++)
+    {
+        char name1[20];
+        int available1;
+        float price1;
+
+        printf("FISH NAME:");
+        scanf("%s",name1);
+        printf("FISH IN STOCK:");
+        scanf("%d",&available1);
+        printf("PRICE(each):");
+        scanf("%f",&price1);
+        printf("\n\n");
+
+
+        strcpy(fish[i].name,name1);
+        fish[i].available = available1;
+        fish[i].price = price1;
+    }
+    //printing ....
+    printf("NAME\t\t\tAVAILABLE\t\t\t\tPRICE(each)\n");
+    for(int i=0; i<n; i++)
+    {
+        printf("%s\t\t\t\t",fish[i].name);
+        printf("%d\t\t\t\t",fish[i].available);
+        printf("%f$\n",fish[i].price);
+    }
+
+    //printing on file
+
+    FILE *fp;
+    fp = fopen("fish_project.txt","wt+");
+
+    fprintf(fp,"\t\t\nWE HAVE :\n");
+    fprintf(fp,"NAME\t\t\tAVAILABLE\t\t\t\tPRICE(each)\n");
+    for(int i=0; i<n; i++)
+    {
+        fprintf(fp,"%s\t\t\t\t",fish[i].name);
+        fprintf(fp,"%d\t\t\t\t",fish[i].available);
+        fprintf(fp,"%f$\n",fish[i].price);
+    }
+    fclose(fp);
+
+
+
+
+    //adding and selling
+    for(int i=0; i<1000; i++)
+    {
+
+        int key;
+        printf("\n\n\n\t\t\t\t\t=================   USER MANUAL   =================\n\n\n");
+        printf("\t\t\t\t\t---TO ADD FISH PRESS 1\n\n\t\t\t\t\t---TO SELL FISH PRESS 2\n\n\t\t\t\t\t---TO SEARCH FISH RECORD BY NAME PRESS 3\n\n\t\t\t\t\t---TO SEARCH FISH RECORD BY AMMOUNT PRESS 4\n\n\t\t\t\t\t---TO SELL ALL FISH OF ANY CATEGORY PRESS 5\n\n\t\t\t\t\t---TO SEE THE CALCULATION TILL NOW PRESS 6\n\n\t\t\t\t\t---TO END PRESS 7\n\n");
+        printf("----> INPUT :");
+        scanf("%d",&key);
+
+        if(key == 1 || key == 2 || key == 3 || key == 4 || key == 5 || key == 6 || key == 7)
+        {
+
+            //selling fish
+            if(key == 2)
+            {
+                int num;
+                char z[20];
+                printf("which fish is sold today? \n:");
+                scanf("%s",z);
+                printf("how much did you sell? \n:");
+                scanf("%d",&num);
+
+
+
+                for(int i=0; i<n; i++)
+                {
+                    if(strcmp(fish[i].name, z) == 0)
+                    {
+
+                        if(num>0)
+                        {
+                            int fpri;
+                            fish[i].available = fish[i].available - num ;
+                            fpri = fish[i].price;
+                            income = incomecalcu(income, fpri, num);
+                            //income = income + (fish[i].price * num);
+                        }
+                    }
+                }
+                printf("\n\t\t\t\t\t=========   AFTER SELL   =========\n");
+                printf("NAME\tAVAILABLE\tPRICE\n");
+                for(int i=0; i<n; i++)
+                {
+                    printf("%s\t\t",fish[i].name);
+                    printf("%d\t\t",fish[i].available);
+                    printf("\t%f\n",fish[i].price);
+                }
+                printf("\n\n");
+
+                if(income >= 0)
+                {
+                    printf("PROFIT = %f $\n",income);
+                }
+                else
+                {
+                    printf("LOSS = %f $\n",income);
+                }
+
+
+
+            }
+
+            //adding fish
+            if(key == 1)
+            {
+                int num;
+                char z[20];
+                printf("which fish you add today? \n:");
+                scanf("%s",z);
+                printf("how much did you add? \n:");
+                scanf("%d",&num);
+
+
+
+                for(int i=0; i<n; i++)
+                {
+                    if(strcmp(fish[i].name, z) == 0)
+                    {
+
+                        if(num>0)
+                        {
+                            fish[i].available = fish[i].available + num ;
+                        }
+                    }
+                }
+                printf("\n\t\t\t\t\t=========   AFTER ADD   =========\n");
+                printf("NAME\t\tAVAILABLE\t\tPRICE\n");
+                for(int i=0; i<n; i++)
+                {
+                    printf("%s\t\t",fish[i].name);
+                    printf("%d\t\t",fish[i].available);
+                    printf("\t%f\n",fish[i].price);
+                }
+                printf("\n\n");
+
+                if(income >= 0)
+                {
+                    printf("PROFIT = %f $\n",income);
+                }
+                else
+                {
+                    printf("LOSS = %f $\n\n\n",income);
+                }
+
+            }
+
+
+            //searching by fish
+            if(key == 3)
+            {
+                char fish_name[20];
+                printf("\n\n\nPLEASE ENTER THE FISH NAME \n :");
+                scanf("%s",fish_name);
+                for(int i=0; i<n; i++)
+                {
+                    if(strcmp(fish[i].name, fish_name) == 0)
+                    {
+                        printf("\t\t\t\t\t=========   AFTER UPDATE   =========\n");
+                        printf("\nFISH NAME = %s\nAVAILABLE = %d\nPRICE OF EACH FISH = %f\n\n",fish[i].name,fish[i].available,fish[i].price);
+
+
+                        //printing on file (3)
+
+                        fp = fopen("fish_project.txt","a+");
+
+                        fprintf(fp,"\t\t\n\nTHE FISH RECORD YOU SEARCHED IS :\n");
+                        fprintf(fp,"\nFISH NAME = %s\nAVAILABLE = %d\nPRICE OF EACH FISH = %f\n\n",fish[i].name,fish[i].available,fish[i].price);
+                        fclose(fp);
+                    }
+                }
+            }
+
+
+            //searching by number of fishes
+            if(key == 4)
+            {
+                int fish_avail;
+                printf("\n\n\nPLEASE ENTER THE AMOUNT OF FISH (INT) \n :");
+                scanf("%d",&fish_avail);
+                for(int i=0; i<n; i++)
+                {
+                    if(fish[i].available == fish_avail)
+                    {
+                        printf("\nFISH NAME = %s\nAVAILABLE = %d\nPRICE OF EACH FISH = %f\n\n",fish[i].name,fish[i].available,fish[i].price);
+                        printf("\n\n");
+
+
+                        //printing on file (3)
+
+                        fp = fopen("fish_project.txt","a+");
+
+                        fprintf(fp,"\t\t\n\n-----------THE FISH RECORD YOU SEARCHED IS :-----------\n");
+                        fprintf(fp,"\nFISH NAME = %s\nAVAILABLE = %d\nPRICE OF EACH FISH = %f\n\n",fish[i].name,fish[i].available,fish[i].price);
+                        fprintf(fp,"\n\n\n\n\n");
+                        fclose(fp);
+                    }
+                }
+            }
+
+
+            //sell all fish of any category
+            if(key == 5)
+            {
+                char fish_name[20];
+                printf("\n\n\nPLEASE ENTER THE FISH NAME \n :");
+                scanf("%s",fish_name);
+                for(int i=0; i<n; i++)
+                {
+                    if(strcmp(fish[i].name, fish_name) == 0)
+                    {
+                        fish[i].available = 0;
+
+                        printf("\t\t\t\t\t=========   AFTER UPDATE   =========\n");
+
+                        printf("NAME\t\t\tAVAILABLE\t\t\t\tPRICE(each)\n");
+                        for(int i=0; i<n; i++)
+                        {
+                            printf("%s\t\t\t\t",fish[i].name);
+                            printf("%d\t\t\t\t",fish[i].available);
+                            printf("%f$\n",fish[i].price);
+                        }
+
+
+                        //printing on file (3)
+
+                        fp = fopen("fish_project.txt","a+");
+
+                        fprintf(fp,"\t\t\n\nTHE FISH YOU WHICH IS NOT AVAILABLE AT ALL IS :\n");
+                        fprintf(fp,"\nFISH NAME = %s\nAVAILABLE = %d\nPRICE OF EACH FISH = %f\n\n",fish[i].name,fish[i].available,fish[i].price);
+                        fclose(fp);
+                    }
+                }
+            }
+
+
+            //printing ....
+            if(key == 6)
+            {
+                printf("NAME\t\t\tAVAILABLE\t\t\t\tPRICE(each)\n");
+                for(int i=0; i<n; i++)
+                {
+                    printf("%s\t\t\t\t",fish[i].name);
+                    printf("%d\t\t\t\t",fish[i].available);
+                    printf("%f$\n",fish[i].price);
+                }
+            }
+
+
+
+
+
+            if(key == 7)
+            {
+                break;
+            }
+
+
+
+        }
+    }
+
+    //printing on file (2)
+
+
+    fp = fopen("fish_project.txt","a+");
+
+    fprintf(fp,"\t\t\n\nEND OF THE DAY WE HAVE :\n");
+    fprintf(fp,"NAME\t\t\tAVAILABLE\t\t\t\tPRICE(each)\n");
+    for(int i=0; i<n; i++)
+    {
+        fprintf(fp,"%s\t\t\t\t",fish[i].name);
+        fprintf(fp,"%d\t\t\t\t",fish[i].available);
+        fprintf(fp,"%f$\n",fish[i].price);
+    }
+    if(income >= 0)
+    {
+        fprintf(fp,"PROFIT = %f $\n",income);
+    }
+    else
+    {
+        fprintf(fp,"LOSS = %f $\n\n\n",income);
+    }
+    fclose(fp);
+
+
+
+
+
+    printf("\n\n\n\n\n\n\n\t\t\t(======)END OF THE FINAL PROJECT,NOW ITS TIME TO SLEEP(======)\n\n");
+    printf("\t\t\t\t  Zzzzz      BYE BYE TA TA      zzzzZ\n");
+
+
+    return 0;
+}
+
+

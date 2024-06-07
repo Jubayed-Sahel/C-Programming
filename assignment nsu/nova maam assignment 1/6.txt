@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+
+    int x ;
+    int y = 1 ;
+    printf("tell me what numbers time table u want?\n");
+    scanf("%d",&x);
+    printf("time table of %d\n",x);
+
+    printf("%d X %d = %d\n",x,y,x*y);
+    y++;
+    printf("%d X %d = %d\n",x,y,x*y);
+    y++;
+    printf("%d X %d = %d\n",x,y,x*y);
+    y++;
+    printf("%d X %d = %d\n",x,y,x*y);
+    y++;
+    printf("%d X %d = %d\n",x,y,x*y);
+    y++;
+    printf("%d X %d = %d\n",x,y,x*y);
+    y++;
+    printf("%d X %d = %d\n",x,y,x*y);
+    y++;
+    printf("%d X %d = %d\n",x,y,x*y);
+    y++;
+    printf("%d X %d = %d\n",x,y,x*y);
+    y++;
+    printf("%d X %d = %d\n",x,y,x*y);
+    y++;
+
+    return 0;
+}

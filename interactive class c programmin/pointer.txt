@@ -1,0 +1,79 @@
+                               &&&&&&&&&&&&&&&&&&&&&&&&&&&(take a look at the handmade note)&&&&&&&&&&&&&&&&&&&&&&&&&  
+
+
+
+                                  ********calss 1**********
+
+  #include<stdio.h>                    //*****%x diye decimal value bojhay*******
+
+int main()
+{
+    int n = 10;
+    int *p=&n;       
+
+    printf("p = %x\r\n",p);             // n er adress
+    printf("*p = %d\r\n",*p);            // ukto adress er value = 10
+    printf("(*p)++ = %d\r\n",(*p)++);     //10(karon eta post incriment tai next line a value 1 barbe)
+    printf("*p = %d\r\n",*p);            //11
+    printf("++*p = %d\r\n",++*p);        //12 (ager line a 11 & jehutu eta pre incriment tai ei line ai value 12 hoye gelo)
+    
+    
+    printf("++p = %x\r\n",++p);         //n er adress +4(ai line ai shes karon pre increment)
+    printf("p++ = %x\r\n",p++);         //n er adress +4 (ai line a change hobena karon post increment tai next line a change hobe)
+    printf("p = %x\r\n",p);             //n er adress +4 +4 
+
+    return 0;
+}
+
+     *******************************************pointer and array*******************************
+
+
+#include<stdio.h>
+
+void addgrace(int* cNum,int n,int num)
+{
+    for(int i=0;i<n;i++)
+    {
+        cNum[i] = cNum[i] + num;
+    }
+}
+
+void printArr(int* arr,int n)
+{
+    for (int i=0;i<n;i++)
+    {
+        printf("%d\r\n",arr[i]);
+    }
+}
+
+int main()
+{
+    int myclass[] = {10,20,30,40,50};
+    int n = sizeof(myclass)/sizeof(myclass[0]);
+
+    printArr(myclass,n);
+    addgrace(myclass,n,10);
+    printArr(myclass,n);
+
+    return 0;
+}
+
+                                **********pass by value and pass by reference*************
+                                        (take a look at the last video of module 11)
+
+#include<stdio.h>
+
+void add10(int* n)
+{
+    *n= *n + 10;
+    printf("inside the function = %d\r\n",*n);
+}
+int main()
+{
+    int a = 5;
+    add10(&a);
+    printf("outside the function = %d\r\n",a);
+    return 0;
+}
+
+

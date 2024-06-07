@@ -1,0 +1,26 @@
+/*Write a C program that reads the radius r of a circle and the side a of a square from user and then 
+checks if that square can be placed inside that circle or not. */
+
+
+#include<stdio.h>
+#define pi 3.14159
+#include<math.h>
+
+int main()
+{
+    float radius,a;
+    printf("please give me the value of radius of the circle and side of the square\n");
+    scanf("%f %f",&radius,&a);
+    float num1 = pi * pow(radius,2);
+    float num2 = sqrt(2) * a ;
+    if(num1 > num2)
+    {
+        printf("congo,square can be placed in the circle\n");
+    }
+    else
+    {
+        printf("sorry sir,square can not be placed inside the circle\n");
+    }
+    return 0;
+}
+

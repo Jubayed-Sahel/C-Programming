@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+
+    int a,b;
+    printf("Enter the distance:");
+    scanf("%d",&a);
+
+    b=a*2;
+    printf("It'll take %d minutos",b );
+    return 0;
+}

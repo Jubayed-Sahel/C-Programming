@@ -1,0 +1,14 @@
+#include<stdio.h>
+#define pi 3.14159
+#include<math.h>
+int main()
+{
+    int r;
+    double volume;
+    printf("give me the value of raduis\n");
+    scanf("%d",&r);
+    volume = (4.0/3) * pi * pow(r,3) ;
+    printf("VOLUME OF SPHERE = %.3lf\n",volume);
+
+    return 0;
+}

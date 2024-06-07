@@ -1,0 +1,17 @@
+#include<stdio.h>
+#define pi 3.14156
+#include<math.h>
+int main()
+{
+    int height,radius,ans ;
+
+   printf("volume of a cone program\n");
+   printf("please give me the value of HEIGHT and RADIUS\n");
+   scanf("%d %d",&height,&radius);
+
+   ans = 1.0/3 *pi * pow(radius,2) *height ;  //1.0 na dile program run hoyna keno??
+
+   printf("VALUE = %d",ans);
+
+    return 0;
+}

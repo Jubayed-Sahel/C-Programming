@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+    float length,width,p;
+    printf("volume of a rectangle\n");
+    printf("please give me the value of length and width : \n");
+    scanf("%f %f",&length,&width);
+
+    p = 2*(length+width);
+    printf("the perimeter is %f\n",p);
+
+
+
+
+    return 0;
+}

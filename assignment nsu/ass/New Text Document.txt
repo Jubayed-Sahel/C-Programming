@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+    char ch;
+    printf("give me any alphabet sir\n");
+    scanf("%c",&ch);
+    if (ch>=65 && ch<=90)
+    {
+        printf("you gave me uppercase character\n");
+    }
+    else if(ch<=122 && ch>=97)
+    {
+        printf("you gave me lowercase character \n");
+    }
+    else
+    {
+        printf("special character!!! invaild!!!\n");
+    }
+
+    return 0;
+}

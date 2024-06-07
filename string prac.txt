@@ -1,0 +1,150 @@
+1............
+//find frequency of any character....(1 way)
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[1000];
+    int arr[26] = {0};
+    gets(str);
+
+    for(int i=0;i<strlen(str);i++)
+    {
+        if(str[i] >= 'a' && str[i] <= 'z')
+        {
+            int temp = str[i] - 'a';
+            arr[temp]++;
+        }
+    }
+    for(int i=0;i<26;i++)
+    {
+        printf("%c = %d\n",i+'a',arr[i]);
+    }
+
+
+
+
+    return 0;
+}
+
+
+
+1.1
+//find frequency of any character....
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[1000];
+    int arr[26] = {0};
+    gets(str);
+
+    for(int i=0;i<strlen(str);i++)
+    {
+        if(str[i] >= 'a' && str[i] <= 'z')
+        {
+            int temp = str[i] - 'a';
+            arr[temp]++;
+        }
+        else if(str[i] >= 'A' && str[i] <= 'Z')
+        {
+            int temp = str[i] - 'A' ;
+            arr[temp]++;
+        }
+    }
+    for(int i=0;i<26;i++)
+    {
+        printf("%c = %d\n",i+'a',arr[i]);
+    }
+    printf("\n\n\n\n");
+    for(int i=0;i<26;i++)
+    {
+        printf("%c = %d\n",i+'A',arr[i]);
+    }
+
+
+
+
+    return 0;
+}
+
+
+
+
+2......................
+//making strong password...
+
+
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+int main()
+{
+    char str[20];
+    printf("ENTER PASSWORD \n:");
+    gets(str);
+    int lower = 0;
+    int upper = 0;
+    int special = 0;
+    int number = 0;
+    if(strlen(str) >= 8);
+    {
+        for(int i=0; i<strlen(str); i++)
+        {
+            if(str[i] >= 'a' && str[i] <= 'z')
+            {
+                lower = 1;
+            }
+            if(str[i] >='A' && str[i]<='Z')
+            {
+                upper = 1;
+            }
+            if(str[i] >= 33 && str[i]<= 47 || str[i] >=58 && str[i] <= 64)
+            {
+                special = 1;
+            }
+            if(str[i] >= 48 && str[i] <=57)
+            {
+                number = 1;
+            }
+
+        }
+    }
+
+    if(strlen(str)<8 || number + special + upper + lower < 4)
+    {
+        printf("THIS IS NOT A STRONG PASSWORD\n");
+        printf("MESSAGE = \n");
+        if(strlen(str) < 8)
+        {
+            printf("length is smaller\n");
+        }
+        if(number < 1)
+        {
+            printf("NUMBER MISSING\n");
+        }
+        if(special < 1)
+        {
+            printf("SPECIAL CHARACTER MISSING\n");
+        }
+        if(upper < 1)
+        {
+            printf("UPPERCASE CHARACTER MISSING\n");
+        }
+        if(lower < 1)
+        {
+            printf("LOWER CASE CHARACTER MISSING\n");
+        }
+
+    }
+    else
+    {
+        printf("password taken");
+    }
+
+    return 0;
+}

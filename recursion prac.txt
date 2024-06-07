@@ -1,0 +1,156 @@
+1............
+#include<stdio.h>
+int fact(int n)
+{
+    if(n==1)
+    {                                  //base case
+        return n;
+    }
+    else
+    {                                    //general case
+        return n*fact(n-1);
+    }
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int ans = fact(n);
+    printf("ANSWER = %d\n",ans);
+
+    return 0;
+}
+
+
+2............
+//2+4+6+8+10+12
+#include<stdio.h>
+int sum(int n)
+{
+    if(n==0)
+    {                                  //base case
+        return n;
+    }
+    else
+    {                                    //general case
+        return n+sum(n-2);
+    }
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int ans = sum(n);
+    printf("ANSWER = %d\n",ans);
+
+    return 0;
+}
+
+
+
+
+3..............
+//1+2+3+4 = ?
+
+#include<stdio.h>
+int sod(int n)
+{
+    if(n==0)
+    {                                  //base case
+        return n;
+    }
+    else
+    {                                    //general case
+        return n%10+sod(n/10);
+    }
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);                    //1234 input
+    int ans = sod(n);
+    printf("ANSWER = %d\n",ans);
+
+    return 0;
+}
+
+
+
+4.................
+//fibonacci series
+
+//0,1,1,2,3,5,8,13
+
+#include<stdio.h>
+int fib(int n)
+{
+    if(n==0 || n==1)
+    {                                    //base case
+        return n;
+    }
+    else
+    {                                    //general case
+        return fib(n-1) + fib(n-2);
+    }
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);                    //1234 input
+    int ans = fib(n);
+    printf("FIBONACCI = %d\n",ans);
+
+    return 0;
+}
+
+
+
+5.................
+//fibonacci series
+//2,3,5,8,13,21
+#include<stdio.h>
+int fib(int n)
+{
+    if(n==2 || n==3)
+    {                                    //base case
+        return n;
+    }
+    else
+    {                                    //general case
+        return fib(n-1) + fib(n-2);
+    }
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);                    //1234 input
+    int ans = fib(n);
+    printf("FIBONACCI = %d\n",ans);
+
+    return 0;
+}
+
+5............
+//decimal to binary....
+
+#include<stdio.h>
+int dtob(int n)
+{
+    if(n==0)
+    {                                    //base case
+        return n;
+    }
+    else
+    {                                    //general case
+        return n%2 + 10 * dtob(n/10);
+    }
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);                    //1234 input
+    int ans = fib(n);
+    printf("FIBONACCI = %d\n",ans);
+
+    return 0;
+}

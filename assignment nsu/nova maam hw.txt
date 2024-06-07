@@ -1,0 +1,18 @@
+#include<stdio.h>
+main()
+{
+   int x;
+   printf("AMI JA VABI TUMI KI TA VBAO?\nVABLE TELL ME A NUMBER BETWEEM 1 TO 10");
+   scanf("%d",&x);
+   if(x == 7)
+   {
+       printf("bahh!!! mile gelo\n");
+   }
+    else
+   {
+       printf("MILLO NA,BOKA GADHA BONE GELE\n");
+   }
+ 
+   
+    return 0;
+}

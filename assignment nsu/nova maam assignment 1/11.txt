@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int hypo,base,altitude;
+   printf("its pythagorean theorem program\n");
+   printf("sir please give me the value of BASE and ALTITUDE : \t\n");
+   scanf("%d %d",&base,&altitude);
+
+   hypo = sqrt (pow(base,2)+pow(altitude,2)) ;
+   printf(" base = %d\n altitude = %d\n hypotenuse = %d\n",base,altitude,hypo);
+
+    return 0;
+}

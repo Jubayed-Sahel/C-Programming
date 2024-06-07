@@ -1,0 +1,88 @@
+                                      ***how to open or close a file***
+
+
+#include<stdio.h>
+int main()
+{
+    FILE *file;
+    file = fopen("test.txt","w");
+    if(file == NULL)
+    {
+        printf("file dosenot exist/n");
+
+    }
+    else
+    {
+        printf("file is opened/n");
+        fclose(file);
+    }
+
+
+    getch();
+}
+
+
+                                      ***writting a file using fputc***
+  
+
+#include<stdio.h>
+int main()
+{
+    FILE *file;
+    char name[20] = " jubayed sahel";
+    int length = strlen (name);
+    int i;
+
+    file = fopen("test.txt","a");
+
+    if(file == NULL)
+    {
+        printf("file dosenot exist/n");
+
+    }
+    else
+    {
+        printf("file is opened\n");
+        for(i=0; i<length ;i++)
+        {
+            fputc(name[i],file);
+        }
+        printf("file is written successfully\n");
+        fclose(file);
+    }
+
+
+    getch();
+}
+
+
+
+                                       ***string writing to a file using fputs***
+
+#include<stdio.h>
+int main()
+{
+    FILE *file;
+    char name[200];
+    file = fopen("test.txt","a");     //a means appand or add jar karone amra joto ja khusi lekhbo and ta file a add hobe
+
+    if (file == NULL)
+    {
+        printf("file dosenot exist\n");
+    }
+    else
+    {
+        printf("file is opened\n");
+        printf("enter your full name\n");
+        gets(name);                                     //gets a input deya name ta store kore rakhlam
+
+        fputs(name,file);                                         //fputs(string,pointer file)
+        fputs("\n",file);                                 //to make space between twolines ( watch video a.i )
+        printf("file is written successfully\n");
+        fclose(file);
+    }
+
+
+
+    getch();
+}

@@ -1,0 +1,31 @@
+*** class 1***
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int num = -1;
+    FILE *myfile;
+    myfile = fopen("log.txt","w");
+    if(myfile == NULL)
+    {
+        printf("file open failed\n");
+        return -1;
+    }
+
+    while(num != 0)
+    {
+        printf("vai,akta number den\n");
+        scanf("%d",&num);
+        fprintf(myfile,"current number is %d\n",num);
+    }
+
+             fclose(myfile);
+             printf("file has been close\r\n");
+
+             return 0;
+
+
+}

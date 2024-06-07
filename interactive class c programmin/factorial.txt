@@ -1,0 +1,59 @@
+                                  *********factorial class 1 **************
+
+   #include<stdio.h>
+
+   int factorial (int n)
+  {
+      int i,fact=1;
+     for(i=1;i<=n;i++)
+     {
+         fact=fact*i;
+     }
+     return fact;
+  }
+
+  int main()
+  {
+      int num;
+      printf("vai,akta number den\r\n");
+      scanf("%d",&num);
+      printf("factorial of %d is %d \r\n",num,factorial(num));
+      return 0;
+  }
+
+
+             
+                ************2nd class and 3rd class and 4thclass important basic(watch it)***********
+
+
+                                              ********class 4**********
+
+
+   #include<stdio.h>
+
+   //declare the function
+  int factorial (int);   //ai function jodi amra main function er agey declare na kori tahole error ashbe karon compiler bujhbe na factorial(12th line) kottheke elo
+
+
+  int main()
+  {
+      int num;
+      printf("vai,akta number den\r\n");
+      scanf("%d",&num);
+      printf("factorial of %d is %d \r\n",num,factorial(num));
+      return 0;
+  }
+
+
+    //defining the function
+   int factorial (int n)
+  {
+      int i,fact=1;
+     for(i=1;i<=n;i++)
+     {
+         fact=fact*i;
+     }
+     return fact;
+  }
+
+                                 

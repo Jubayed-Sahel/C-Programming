@@ -1,0 +1,110 @@
+#include<stdio.h>
+int main()
+{
+    int x;
+    printf("enter the number of your month\n");
+    scanf("%d",&x);
+    if (x == 1 || x == 3 || x==5 || x==7 || x == 9 || x == 11)
+    {
+        printf("31 days in this month\n");
+    }
+    else if (x == 2)
+    {
+        printf("it has 28 days");
+    }
+    else
+    {
+        printf("30 dAYS are here\n");
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int x;
+    printf("please tell me whats your age?\n");
+    scanf("%d",&x);
+    if(x<25)
+    {
+        printf("sorry youre too young");
+    }
+    else if(x>45)
+    {
+        printf("sorry you are too old");
+    }
+    else
+    {
+        printf("you can work here,you may proceed sir");
+    }
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int num;
+    printf("sir please give me a number \n");
+    scanf("%d",&num);
+    if(num%2 == 0)
+    {
+        if(num%5 == 0)
+        {
+            printf("%d is divided by 2 and 5\n",num);
+        }
+        else
+        {
+            printf("%d is only divided by 2\n ",num);
+        }
+    }
+    else if (num%5 == 0)
+    {
+        printf("%d is divided by 5\n",num);
+    }
+    else
+    {
+        printf("%d is neither divider by 2 nor 5\n");
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

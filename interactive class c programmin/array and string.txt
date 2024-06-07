@@ -1,0 +1,145 @@
+                                     ******bubble sort*******
+
+#include<stdio.h>
+main()
+{
+int myarr[] = {10,2,31,14,52,26,87,18,9,1};
+       int i,j;
+       int n = sizeof(myarr) / sizeof(myarr[0]);
+       int temp;
+       printf("before:\n");
+        for(i=0;i<n;i++)
+       {
+           printf("myarr[%d] = %d\n",i,myarr[i]);
+       }
+
+       //sort the array {bubble sorting}
+       for(i = 0; i<n ;i++)
+       {
+           for(j = 0;j<n-i-1 ;j++)//(n=total array=10),(jokhon i=0 tkhn j=0,1,2...9) abar (jkhn i=1 tkhn j=0,1,2,3....8) abar(jkhn i=2 tkhn j=0,1.....7)             
+            
+           {
+               if(myarr[j]>myarr[j+1])
+               {
+                   //swap
+                   temp = myarr[j];
+                   myarr[j]=myarr[j+1];
+                   myarr[j+1]=temp;
+               }
+           }
+       }
+       printf("after:\n");
+
+       for(i=0;i<n;i++)
+       {
+           printf("myarr[%d] = %d\n",i,myarr[i]);
+       }
+
+       return 0;
+   }
+
+                                *********basic string code*************
+#include<stdio.h>
+
+   int main()
+   {
+       char mystr[] = "hello world";
+
+       printf("%s\r\n",mystr);
+
+       return 0;
+   }
+
+
+
+                                            ***********how to find out a string length************
+
+ #include<stdio.h>
+
+   int main()
+   {
+       char mystr[] = "hello world";
+
+       int n=0;
+       while(mystr[n]!='\0')
+       {
+           n++;
+       }
+       printf("%d",n);
+
+       return 0;
+   }
+ ###{but we dont have to do it with while loop....to make this easier we have string library functions}
+
+ #include<stdio.h>
+ #include<string.h>  //string header file
+
+   int main()
+   {
+       char mystr[] = "hello world";
+
+
+       printf("%d",strlen(mystr));
+
+       return 0;
+   }
+
+
+                            ***********some uses of string.h header file***********
+
+#include<stdio.h>
+ #include<string.h>  //string header file
+
+   int main()
+   {
+       char mystr1[20] = "hello"; //char* use korlam na karon holo ekhane 20 bit jayga boraddho kore diyeshi
+       char* mystr2 = " world";
+       char*students [] = {"sahel","akash","batash"};
+       int i;
+
+        //strcmp
+       printf("%d\r\n",strcmp(mystr1,mystr2));
+        //strcat
+        strcat(mystr1,mystr2);
+        printf("%s\r\n",mystr1);
+        //array of string
+        for(i=0;i<3;i++)
+        {
+            printf("roll %d is %s\r\n",i+1,students[i]);       //i+1 deya hoyeche karon i er man 0 theke shuru kora hoyeche...
+        }
+       return 0;
+   }
+
+                                *************last class of array and string***********
+                                               (reverse string and palindrome)
+
+#include<stdio.h>
+ #include<string.h>  //string header file
+
+   int main()
+   {
+       char mystr[20] = "madam";   //hello diye check koro
+       char revStr[20];
+       int n = strlen(mystr);   //n=5 karon madam a total 5 ta char ache
+       int i;
+       //reverse a string
+       for(i=0;i<n;i++)
+       {
+           revStr[i] = mystr[n-1-i];  //akhane madam er m=0 no char a=1 no character d=2 no character a=3 no character m=4 number character then "\0" =5 number character...karon eta diye bojha jay word ta shes
+       }
+
+       revStr[i] = '\0';   //eta manually add korlam jeno compiler bujhe amr word ta shes...
+        printf("%s \r\n",revStr);
+
+
+        //check if its a palindrome (ja ultaleo ager mtoe thake tai palindrome)
+        if(strcmp(mystr,revStr) == 0)
+        {
+            printf("%s is a palindrome\r\n",mystr);
+        }
+        else
+        {
+            printf("%s is not a palindrome\r\n",mystr);
+        }
+        return 0;
+   }

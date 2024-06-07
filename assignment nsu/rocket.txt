@@ -1,0 +1,50 @@
+#include<stdio.h>
+void rocket_head();
+void rocket_body1();
+void rocket_body2();
+void rocket_smoke();
+main()
+{
+    rocket_head();
+    rocket_body1();
+    rocket_body1();
+    rocket_body1();
+    rocket_body2();
+    rocket_smoke();
+    rocket_smoke();
+
+}
+void rocket_head()
+{
+    printf("                *         \n");
+    printf("               ^ ^       \n");
+    printf("             ^     ^         \n");
+    printf("            ^       ^         \n");
+    printf("           ^         ^       \n");
+}
+
+void rocket_body1()
+{
+
+    printf("           |         |           \n");
+    printf("           (         )           \n");
+    printf("           (         )           \n");
+
+}
+void rocket_body2()
+{
+     printf("            \\       /           \n");
+    printf("             \\     /           \n");
+    printf("              \\   /          \n");
+}
+void rocket_smoke()
+{
+    printf("              !!!!!         \n");
+    printf("              !!!!!         \n");
+    printf("               !!!         \n");
+    printf("               !!!       \n");
+    printf("               !!!       \n");
+    printf("                !       \n");
+    printf("                !       \n");
+
+}

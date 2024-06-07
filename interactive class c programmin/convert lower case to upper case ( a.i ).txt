@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()   //use any one method
+{
+     // 1. if we want to do it without library function
+    char lower;
+    printf("please enter any lowercase letter\n");
+    scanf("%c",&lower);    //a=97
+
+
+
+
+    printf("The Upper Case Letter : %c\n",lower - 32);  //A=65
+
+    //2.if we want to do it with library function
+
+    char lower,upper;
+    printf("please enter any lowercase letter:/n");
+    scanf("%c",&lower);
+
+    upper = toupper(lower);   //toupper akti library function
+
+    printf("upper case letter is %c",upper);
+    return 0;
+}

@@ -1,0 +1,190 @@
+1..............(taking input and showing output)
+#include<stdio.h>
+#include<string.h>
+
+struct student
+{
+    int id;
+    char name[10];
+    float cgpa;
+};
+int main()
+{
+    struct student s1;
+    s1.id = 5;
+    strcpy(s1.name, "sahel");
+    s1.cgpa = 2.6;
+    printf("%d\n%s\t%f",s1.id, s1.name,s1.cgpa);
+
+
+
+    return 0;
+}
+
+
+
+2............
+#include<stdio.h>
+#include<string.h>
+
+struct student
+{
+    int id;
+    char name[10];
+    float cgpa;
+};
+int main()
+{
+    struct student s1[3];
+    for(int i=0;i<3;i++)
+    {
+        int id1;
+        char name1;
+        float cgpa1;
+        scanf("%d",&id1);
+        scanf("%s", name1);
+        scanf("%f" ,&cgpa1);
+        s1[i].id = id1;
+        strcpy (s1[i].name, name1);
+        s1[i].cgpa = cgpa1;
+    }
+
+
+
+    for(int i =0;i<3;i++)
+    {
+        printf("%d\t", s1[i].id);
+        printf("%s\t", s1[i].name);
+        printf("%f\n", s1[i].cgpa);
+    }
+
+
+
+
+    return 0;
+}
+
+
+
+3.............................
+using structure in a function.........
+
+
+#include<stdio.h>
+#include<string.h>
+struct person
+{
+    char name[20];
+    int age;
+    float salary
+};
+
+void display(struct person p)
+{
+    printf("\nNAME : %s\n",p.name);
+    printf("AGE : %d\n",p.age);
+    printf("SALARY : %f\n",p.salary);
+}
+
+
+
+int main()
+{
+    struct person person1,person2;
+
+    strcpy(person1.name , "sahel ahmed");
+    person1.age = 21;
+    person1.salary = 2090.20;
+
+    display(person1);
+
+    strcpy(person2.name , "sahal ahmed");
+    person2.age = 18;
+    person2.salary = 3590.20;
+
+    display(person2);
+
+
+    return 0;
+}
+
+
+
+
+4............
+in lab practice
+
+
+#include<stdio.h>
+#include<string.h>
+struct student
+{
+    char name[10];
+    int id;
+    float cgpa;
+    char q[24];
+};
+
+
+
+int main()
+{
+    struct student s1[3];
+    char n1[10];
+    int n2;
+    float n3;
+    int exam;
+    scanf("%d",&exam);
+    for(int i=0; i<3; i++)
+    {
+        scanf("%s",strcpy(s1[i].name,n1));
+        scanf("%d",&s1[i].id);
+        scanf("%f",&s1[i].cgpa);
+        for(int j=0 ; j<exam ;j++)
+        {
+            scanf("%d",&s1[i].q[j]);
+        }
+    }
+    printf("==============STUDENT LIST==============\n");
+    for(int i=0; i<3; i++)
+    {
+        printf("%s ",strcpy(s1[i].name,n1));
+        printf("%d ",s1[i].id);
+        printf("%f\n",s1[i].cgpa);
+        float avg;
+        int sum =0;
+        for(int j =0;i<exam ;j++)
+        {
+            sum = sum + s1[i].q[j];
+        }
+        avg = (float)sum/exam;
+        printf("%f \n",avg);
+    }
+    printf("------------------------");
+    printf("HIGHEST CGPA : \n");
+    float m = s1[0].cgpa;
+    for(int i=0; i<3; i++)
+    {
+        if(m<s1[i].cgpa)
+        {
+            m = s1[i].cgpa;
+        }
+    }
+
+    for(int i=0; i<3; i++)
+    {
+        if(s1[i].cgpa == m)
+        {
+            printf("%s ",s1[i].name);
+            printf("%d ",s1[i].id);
+            printf("%f\n",s1[i].cgpa);
+        }
+    }
+
+
+
+
+    return 0;
+}
+
+

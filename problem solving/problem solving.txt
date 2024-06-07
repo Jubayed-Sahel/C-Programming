@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+    int input;
+    double sum = 0;
+    printf("\n\n==== Algebraic Series Calculator ====\n 1/2 + 1/4 + ..... 1\n: What is your even \"n\"?\n");
+    printf("Give your input:");
+    scanf("%d", &input);
+   if(input%2 == 0 ){
+    for(double i = 1.000; i<=input/2; i++){
+        sum += 1.0000/(i*2);
+        printf("Sum loop number:%.d:  %0.6f\n",(int)i, sum);
+
+        }
+
+        printf("\n\n\nYour answer is: %0.6f !\nNow pay us the money!!\n\n",sum);
+
+    } else {
+    printf("Not an even integer!!!! Answer again!\n\n");
+    main();
+    }
+
+}
+

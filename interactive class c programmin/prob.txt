@@ -1,0 +1,24 @@
+ #include<stdio.h>
+ int main()
+
+{
+    int n,i;
+    int sum=0;
+
+    printf("vai akta number den\r\n");      
+    scanf("%d",&n);
+    for(i=0;i<=n;i=i+1)
+    {
+        sum = sum + i;
+    }
+    printf("summation of 1 to %d is %d\r\n",n,sum);
+
+    return 0;
+}
+   
+ 
+                                  #solved#
+
+
+
+
